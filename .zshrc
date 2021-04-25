@@ -26,3 +26,4 @@ source /usr/local/share/zsh-you-should-use/you-should-use.plugin.zsh
 
 # aliases
 alias grep='grep -a'
+alias seed_run='curl https://raw.githubusercontent.com/nulogy/how-to-code/main/run -o ./run; chmod a+x ./run'
