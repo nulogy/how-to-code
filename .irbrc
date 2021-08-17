@@ -1,6 +1,15 @@
 IRB.conf[:SAVE_HISTORY] = 200
 IRB.conf[:HISTORY_FILE] = '~/.irb-history'
 
+def ras
+  require "active_support/all"
+end
+
+def uuid
+  require "securerandom"
+  SecureRandom.uuid
+end
+
 def set_account(id)
   Account.find(id).set_schema_search_path
 end
@@ -28,7 +37,9 @@ load(:irb) do
 end
 
 load(:rails) do
-  include FactoryBot::Syntax::Methods
+  # Including FactoryBot breaks the following command:
+  # WorkOrder.first.update(description: "lkj")
+  #include FactoryBot::Syntax::Methods
 rescue Exception => ex
   puts ex
 end
