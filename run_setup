@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "3.0.2" >> ~/.ruby-version
+echo "gem: --no-document" >> ~/.gemrc
+echo .DS_Store >> ~/.gitignore
+curl https://raw.githubusercontent.com/nulogy/how_to_code/main/.irbrc -o ~/.irbrc
+curl https://raw.githubusercontent.com/nulogy/how_to_code/main/.rubocop.yml -o ~/.rubocop.yml
+curl https://raw.githubusercontent.com/nulogy/how_to_code/main/.zshrc -o ~/.zshrc
+touch ~/.hushlogin
+git config --global init.defaultBranch main
