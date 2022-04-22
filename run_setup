@@ -2,7 +2,6 @@
 
 curl https://raw.githubusercontent.com/nulogy/how_to_code/main/.irbrc -o ~/.irbrc
 curl https://raw.githubusercontent.com/nulogy/how_to_code/main/.rubocop.yml -o ~/.rubocop.yml
-curl https://raw.githubusercontent.com/nulogy/how_to_code/main/.zshrc -o ~/.zshrc
 echo "gem: --no-document" >> ~/.gemrc
 echo .DS_Store >> ~/.gitignore
 git config --global init.defaultBranch main
