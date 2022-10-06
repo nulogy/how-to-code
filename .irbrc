@@ -15,16 +15,18 @@ def set_account(id)
 end
 
 def load(condition = :always, &block)
-  case condition
-  when :always
-    block.call
-  when :rails
-    block.call if ENV['RAILS_ENV']
-  when :irb
-    block.call unless ENV['RAILS_ENV']
+  begin
+    case condition
+    when :always
+      block.call
+    when :rails
+      block.call if ENV['RAILS_ENV']
+    when :irb
+      block.call unless ENV['RAILS_ENV']
+    end
+  rescue Exception => ex
+    puts ex
   end
-rescue Exception => ex
-  puts ex
 end
 
 load(:irb) do
@@ -37,11 +39,13 @@ load(:irb) do
 end
 
 load(:rails) do
-  # Including FactoryBot breaks the following command:
-  # WorkOrder.first.update(description: "lkj")
-  #include FactoryBot::Syntax::Methods
-rescue Exception => ex
-  puts ex
+  begin
+    # Including FactoryBot breaks the following command:
+    # WorkOrder.first.update(description: "lkj")
+    #include FactoryBot::Syntax::Methods
+  rescue Exception => ex
+    puts ex
+  end
 end
 
 load do
