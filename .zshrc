@@ -16,13 +16,13 @@ export EDITOR='subl -w'
 export PATH=.:./bin:~/bin:$PATH
 
 # homebrew
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # zsh-autosuggestions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # zsh-you-should-use
-source /usr/local/share/zsh-you-should-use/you-should-use.plugin.zsh
+source /opt/homebrew/share/zsh-you-should-use/you-should-use.plugin.zsh
 
 # aliases
 alias grep='grep -a'
