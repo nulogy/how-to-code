@@ -16,13 +16,19 @@ export EDITOR='subl -w'
 export PATH=.:./bin:~/bin:$PATH
 
 # homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+#export HOMEBREW_DIR=/opt/homebrew # on Apple silicon machines
+export HOMEBREW_DIR=/usr/local # on Mac Intel machines
+eval "$($HOMEBREW_DIR/bin/brew shellenv)"
+
+# chruby
+source $HOMEBREW_DIR/opt/chruby/share/chruby/chruby.sh
+source $HOMEBREW_DIR/opt/chruby/share/chruby/auto.sh
 
 # zsh-autosuggestions
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOMEBREW_DIR/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # zsh-you-should-use
-source /opt/homebrew/share/zsh-you-should-use/you-should-use.plugin.zsh
+source $HOMEBREW_DIR/share/zsh-you-should-use/you-should-use.plugin.zsh
 
 # aliases
 alias grep='grep -a'
