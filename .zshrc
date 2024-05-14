@@ -16,8 +16,8 @@ export EDITOR='subl -w'
 export PATH=.:./bin:~/bin:$PATH
 
 # homebrew
-#eval "$(/opt/homebrew/bin/brew shellenv)" # on Apple silicon machines
-eval "$(/usr/local/bin/brew shellenv)" # on Mac Intel machines
+#eval "$(/usr/local/bin/brew shellenv)" # on Mac Intel machines
+eval "$(/opt/homebrew/bin/brew shellenv)" # on Apple silicon machines
 
 # chruby
 source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
