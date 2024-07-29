@@ -31,5 +31,6 @@ source $HOMEBREW_PREFIX/share/zsh-you-should-use/you-should-use.plugin.zsh
 
 # aliases
 alias grep='grep -a'
+alias ruby_test='ag -g "\.rb$" | entr -c -s "ruby *_test.rb"'
 alias seed_run='curl https://raw.githubusercontent.com/nulogy/how-to-code/main/run -o ./run; chmod a+x ./run'
 alias seed_run_cop='curl https://raw.githubusercontent.com/nulogy/how-to-code/main/run_cop -o ./run; chmod a+x ./run'
