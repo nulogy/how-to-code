@@ -4,5 +4,6 @@ curl https://raw.githubusercontent.com/nulogy/how_to_code/main/.irbrc -o ~/.irbr
 curl https://raw.githubusercontent.com/nulogy/how_to_code/main/.rubocop.yml -o ~/.rubocop.yml
 echo "gem: --no-document" >> ~/.gemrc
 echo .DS_Store >> ~/.gitignore
+echo .exercism >> ~/.gitignore
 git config --global init.defaultBranch main
 touch ~/.hushlogin
